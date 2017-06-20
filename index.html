@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Train Scheduler</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Audiowide|Bungee" rel="stylesheet">
+    <script src="https://www.gstatic.com/firebasejs/4.1.2/firebase.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+    <!-- Favicon -->
+    <link href="data:image/x-icon;base64,AAABAAEAEBAAAAAAAABoBQAAFgAAACgAAAAQAAAAIAAAAAEACAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAAAAAAAWlrwAPn5+QCSkuUAubn6AAIC/AAPD98AIiKxAOLi4ADBwfQAIiLKAPj49ADe3tsAAAD6AHBwgABlZLMAcnJyABER8wB5eXcAnZ2dACcnJwDm5uYAOTjnAAAA6gDu7ugA7O3rAPj49QBsbGsAe3v/AOnp5gD///oAAAD7ANTU4ADq6vQAFBR3AKal+wDy8vYAfX19AMbGxgAcHN0AcXHzAAAAsQCUlOoAJCUuAGxsbABoaGcA///7AHNzcQAAAPwAaGiAAP7+/gAAAMIAvr7/AODg4ACenpwAiYr/ACYlxAC1tfgAvr69AG1tagDm5uAAERHlAFBRqgBOTXMAzMz5AOfn5gBmZmYAiIiBAL6+vgArKycAgIDKAAAAYAD4+PgAnJybADk5vgBycpcAU1TMAPDw7gDFxe0AQkLOAGZmbwAUFP8Aenr9AK6uogAoKCgAZmZnAHFxcQDBwccAv7/uAB4eLAAJCuIAJybtANDQzgCcnJwAmpvyAAAA5gAvL+QA///+AAAA/wBwcGwAUlKIAKen2ABqam0ASEntAAYHqQCcnJ0A////AGZltgCfoJoAIiP3AAQE/QCamrwAn6D+AA4OtwBMTN0Ac3OGAHJywwBycnAA4eHZAKKinQD9/f0AAgL7ADExOgDq6ukAnZ2bADk5qAAODvoA19fVAAYGvgD7+/sA3t7aAA0M5wAODjMA1dX0ADg3jQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAampqampqampqal4NeQlqamFqampqampqampABR85amoqPBUVFRUVFRUVIBEwA0ECF4QAAAAAAAAAAAApYkcAJmKAZhBWVlZWVlZ1SjB9LzUoYjdqampqampqaiMNUmpqGWduWBpISEhISEhOMAELeGNZMwZ6VBQUFBQUK19xRVwVd29+B2wTExMTEzZgJ3x7ampqBFE0ampqampqHG1qampqMlMiPXMtQkJCVYZaUAxqamp/Q3JoEiUlJSVLgw4IampqamokFnAugYGBIVuFMmpqampqGDEKPzssLBs4ZIJqampqamoeZU9XREQ6TEZNampqampqanZ0PkldaWsPHQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" rel="icon" type="image/x-icon" />
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+</head>
+
+<body>
+    <div class="container text-center">
+        <div class="jumbotron">
+            <h1 class="text-center">Train Scheduler</h1>
+            <!-- Site explanation -->
+            <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Site explanation</button>
+            <div id="demo" class="collapse">
+                A train schedule application that incorporates Firebase that host's arrival and departure data. This app retrieves and manipulates the information with Moment.js. The website provides up-to-date information about various trains, namely their arrival times and how many minutes remain until they arrive at their station.
+            </div>
+        </div>
+        <!-- entered employee area -->
+        <div class="jumbotron">
+            <table id="tableHead" class="table">
+                <thead>
+                    <tr>
+                        <th id="emp">EmployeeName</th>
+                        <th id="roleId">Role</th>
+                        <th id="dateId">Start Date</th>
+                        <th>Months Worked</th>
+                        <th id="rateId">Monthly Rate($)</th>
+                        <th>Total Billed($)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- <tr>
+                        <td>Sanish</td>
+                        <td>QA</td>
+                        <td>01-02-1999</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr> -->
+                </tbody>
+            </table>
+        </div>
+        <!-- form area -->
+        <div class="jumbotron" class="text-left">
+            <form>
+                <div class="form-group text-left">
+                    <label for="Employee Name">Employee Name</label>
+                    <input type="Employee Name" class="form-control" id="empName" placeholder="Enter Employee Name">
+                </div>
+                <div class="form-group text-left">
+                    <label for="Role">Role</label>
+                    <input type="Role" class="form-control" id="role" placeholder="Enter Role">
+                </div>
+                <div class="form-group text-left">
+                    <label for="Date">Start Date</label>
+                    <input type="Date" class="form-control" id="date" placeholder="Enter Start Date">
+                </div>
+                <div class="form-group text-left">
+                    <label for="Rate">Monthly Rate</label>
+                    <input type="Rate" class="form-control" id="rate" placeholder="Enter Monthly Rate">
+                </div>
+                <button id="addEmp" type="submit" class="btn btn-default">Submit</button>
+            </form>
+        </div>
+    </div>
+    </div>
+    <!-- Footer Section -->
+    <div class="col-md-12 text-center jumbotron">
+        <footer class="footer">
+            <p>&copy; 2017 Sanish John</p>
+            <div class="icons">
+                <a href="https://github.com/sanishj" target="_blank"><i style="font-size:24px" class="fa">&#xf09b;</i></a>
+                <a href="https://www.linkedin.com/in/sanishjohn/" target="_blank"><i style="font-size:24px" class="fa">&#xf08c;</i></a>
+                <a href="https://stackexchange.com/users/10555759/sanishj" target="_blank"><i style="font-size:24px" class="fa">&#xf16c;</i></a>
+                <a href="https://twitter.com/sanishj" target="_blank"><i style="font-size:24px" class="fa">&#xf099;</i></a>
+            </div>
+        </footer>
+    </div>
+    <script type="text/javascript" src="assets/javascript/app.js"></script>
+</body>
+
+</html>
