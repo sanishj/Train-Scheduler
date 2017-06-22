@@ -29,41 +29,29 @@
         </div>
         <!-- entered employee area -->
         <div class="jumbotron">
-
-        <!-- Test area -->
-        <div class="panel panel-primary">
-            <div class="panel-heading">
-                <h3 class="panel-title">Current Train Schedule</h3>
-                <!-- <div class="pull-right">
+            <!-- Test area -->
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Current Train Schedule</h3>
+                    <!-- <div class="pull-right">
                     <button class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-filter"></span> Filter</button>
                 </div> -->
+                </div>
+                <table class="table">
+                    <thead>
+                        <tr class="filters">
+                            <th id="emp">Train Name</th>
+                            <th id="roleId">Destination</th>
+                            <th id="dateId">Frequency (min)</th>
+                            <th>Next Arrival</th>
+                            <th id="rateId">Minutes Away</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
             </div>
-            <table class="table">
-                <thead>
-                    <tr class="filters">
-                        <!-- <th><input type="text" class="form-control" placeholder="#" disabled></th>
-                        <th><input type="text" class="form-control" placeholder="First Name" disabled></th>
-                        <th><input type="text" class="form-control" placeholder="Last Name" disabled></th>
-                        <th><input type="text" class="form-control" placeholder="Username" disabled></th> -->
-                        <th id="emp">EmployeeName</th>
-                        <th id="roleId">Role</th>
-                        <th id="dateId">Start Date</th>
-                        <th>Months Worked</th>
-                        <th id="rateId">Monthly Rate($)</th>
-                        <th>Total Billed($)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    
-                </tbody>
-            </table>
-        </div>
-
-        <!-- End Area -->
-
-
-
-
+            <!-- End Area -->
             <table id="tableHead" class="table">
                 <thead>
                     <tr>
@@ -89,39 +77,44 @@
         </div>
         <!-- form area -->
         <div class="jumbotron" class="text-left">
-            <form>
-                <div class="form-group text-left">
-                    <label for="Employee Name">Employee Name</label>
-                    <input type="Employee Name" class="form-control" id="empName" placeholder="Enter Employee Name">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Add Train</h3>
                 </div>
-                <div class="form-group text-left">
-                    <label for="Role">Role</label>
-                    <input type="Role" class="form-control" id="role" placeholder="Enter Role">
-                </div>
-                <div class="form-group text-left">
-                    <label for="Date">Start Date</label>
-                    <input type="Date" class="form-control" id="date" placeholder="Enter Start Date">
-                </div>
-                <div class="form-group text-left">
-                    <label for="Rate">Monthly Rate</label>
-                    <input type="Rate" class="form-control" id="rate" placeholder="Enter Monthly Rate">
-                </div>
-                <button id="addEmp" type="submit" class="btn btn-default">Submit</button>
-            </form>
-        </div>
-    </div>
-    </div>
-    <!-- Footer Section -->
-    <div class="col-md-12 text-center jumbotron">
-        <footer class="footer">
-            <p>&copy; 2017 Sanish John</p>
-            <div class="icons">
-                <a href="https://github.com/sanishj" target="_blank"><i style="font-size:24px" class="fa">&#xf09b;</i></a>
-                <a href="https://www.linkedin.com/in/sanishjohn/" target="_blank"><i style="font-size:24px" class="fa">&#xf08c;</i></a>
-                <a href="https://stackexchange.com/users/10555759/sanishj" target="_blank"><i style="font-size:24px" class="fa">&#xf16c;</i></a>
-                <a href="https://twitter.com/sanishj" target="_blank"><i style="font-size:24px" class="fa">&#xf099;</i></a>
+                <form class="text-left">
+                    <div class="form-group text-left">
+                        <label for="Employee Name">Train Name</label>
+                        <input type="Employee Name" class="form-control" id="js-TrainName" placeholder="Enter Train Name">
+                    </div>
+                    <div class="form-group text-left">
+                        <label for="Role">Destination</label>
+                        <input type="Role" class="form-control" id="js-Dest" placeholder="Enter Destination">
+                    </div>
+                    <div class="form-group text-left">
+                        <label for="Date">First Train Time</label>
+                        <input type="Date" class="form-control" id="js-FirstTrain" placeholder="Enter Start Date">
+                    </div>
+                    <div class="form-group text-left">
+                        <label for="Rate">Frequency</label>
+                        <input type="Rate" class="form-control" id="js-Frequency" placeholder="Enter Monthly Rate">
+                    </div>
+                    <button id="addEmp" type="submit" class="btn btn-default">Start</button>
+                </form>
             </div>
-        </footer>
+        </div>
+        <!-- </div> -->
+        <!-- Footer Section -->
+        <div class="col-md-12 text-center jumbotron">
+            <footer class="footer">
+                <p>&copy; 2017 Sanish John</p>
+                <div class="icons">
+                    <a href="https://github.com/sanishj" target="_blank"><i style="font-size:24px" class="fa">&#xf09b;</i></a>
+                    <a href="https://www.linkedin.com/in/sanishjohn/" target="_blank"><i style="font-size:24px" class="fa">&#xf08c;</i></a>
+                    <a href="https://stackexchange.com/users/10555759/sanishj" target="_blank"><i style="font-size:24px" class="fa">&#xf16c;</i></a>
+                    <a href="https://twitter.com/sanishj" target="_blank"><i style="font-size:24px" class="fa">&#xf099;</i></a>
+                </div>
+            </footer>
+        </div>
     </div>
     <script type="text/javascript" src="assets/javascript/app.js"></script>
 </body>

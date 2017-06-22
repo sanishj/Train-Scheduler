@@ -16,3 +16,11 @@ h1 {
     padding: 10px;
     color: black;
 }
+
+form {
+	padding: 20px;
+}
+
+th {
+	font-weight: 600;
+}

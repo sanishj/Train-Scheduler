@@ -4,15 +4,15 @@ $(document).ready(function() {
     // <script src="https://www.gstatic.com/firebasejs/4.1.2/firebase.js"></script>
 
     // Initialize Firebase
-    var config = {
-        apiKey: "AIzaSyAavjGkRY_U4Q2oqFggoJJ00S6wixmfMd8",
-        authDomain: "employee-66675.firebaseapp.com",
-        databaseURL: "https://employee-66675.firebaseio.com",
-        projectId: "employee-66675",
-        storageBucket: "",
-        messagingSenderId: "885238252860"
-    };
-    firebase.initializeApp(config);
+      var config = {
+        apiKey: "AIzaSyBxMFppZPw_ZHM_9Dh-VJvhkMrezTShtsM",
+        authDomain: "traintrkr.firebaseapp.com",
+        databaseURL: "https://traintrkr.firebaseio.com",
+        projectId: "traintrkr",
+        storageBucket: "traintrkr.appspot.com",
+        messagingSenderId: "1087400696597"
+      };
+      firebase.initializeApp(config);
 
     var database = firebase.database();
 
@@ -26,23 +26,23 @@ $(document).ready(function() {
     $("#addEmp").on("click", function(event) {
         // prevent form from submitting
         event.preventDefault();
-        name = $("#empName").val().trim();
-        role = $("#role").val().trim();
-        startDate = $("#date").val().trim();
-        monthlyRate = $("#rate").val().trim();
-        console.log(name);
+        trainName = $("#js-TrainName").val().trim();
+        destination = $("#js-Dest").val().trim();
+        firstTrain = $("#js-FirstTrain").val().trim();
+        frequency = $("#js-Frequency").val().trim();
+        console.log(trainName);
         database.ref().push({
-            employee: name,
-            role: role,
-            startDate: startDate,
-            monthlyRate: monthlyRate
+            TrainName: trainName,
+            TrainDestination: destination,
+            FirstTrain: startDate,
+            TrainFrequency: monthlyRate
         });
         /*var dynamicEmpRow = $("<tbody>" + "<tr>" + "<td>" + name +"</td>" + "</tr>" + "</tbody>");
         var dynamicRoleRow = $("<tbody>" + "<tr>" + "<td>" + role +"</td>" + "</tr>" + "</tbody>");
         var dynamicDateRow = $("<tbody>" + "<tr>" + "<td>" + startDate +"</td>" + "</tr>" + "</tbody>");
         var dynamicRateRow = $("<tbody>" + "<tr>" + "<td>" + monthlyRate +"</td>" + "</tr>" + "</tbody>");*/
-        var dynamicRow = $("<tbody>" + "<tr>" + "<td>" + name +"</td>" + "<td>" + role +"</td>" 
-            + "<td>" + startDate +"</td>" + monthsWorked +"</td>" + "<td>" + monthlyRate +"</td>" + 
+        var dynamicRow = $("<tbody>" + "<tr>" + "<td>" + trainName +"</td>" + "<td>" + destination +"</td>" 
+            + "<td>" + firstTrain +"</td>" + monthsWorked +"</td>" + "<td>" + frequency +"</td>" + 
             "<td>" + totBilled +"</td>"+ "</tr>" + "</tbody>");
         /*$("#emp").append(dynamicEmpRow);
         $("#roleId").append(dynamicRoleRow);
@@ -54,10 +54,10 @@ $(document).ready(function() {
     });
 
     database.ref().on("child_added", function(childSnapshot) {
-        console.log(childSnapshot.val().name);
-        console.log(childSnapshot.val().role);
-        console.log(childSnapshot.val().startDate);
-        console.log(childSnapshot.val().monthlyRate);
+        console.log(childSnapshot.val().trainName);
+        console.log(childSnapshot.val().destination);
+        console.log(childSnapshot.val().firstTrain);
+        console.log(childSnapshot.val().frequency);
     });
 
 });
