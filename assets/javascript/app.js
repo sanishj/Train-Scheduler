@@ -30,37 +30,12 @@ $(document).ready(function() {
         };
 
         console.log(newTrain);
-        
 
 
-        database.ref().push({
-            TrainName: trainName,
-            TrainDestination: destination,
-            FirstTrain: startDate,
-            TrainFrequency: monthlyRate
-        });
 
-    var name = "";
-    var role = "";
-    var startDate = "";
-    var monthsWorked = "";
-    var monthlyRate = "";
-    var totBilled = "";
+        database.ref().push(newTrain);
 
-        /*var dynamicEmpRow = $("<tbody>" + "<tr>" + "<td>" + name +"</td>" + "</tr>" + "</tbody>");
-        var dynamicRoleRow = $("<tbody>" + "<tr>" + "<td>" + role +"</td>" + "</tr>" + "</tbody>");
-        var dynamicDateRow = $("<tbody>" + "<tr>" + "<td>" + startDate +"</td>" + "</tr>" + "</tbody>");
-        var dynamicRateRow = $("<tbody>" + "<tr>" + "<td>" + monthlyRate +"</td>" + "</tr>" + "</tbody>");*/
-        var dynamicRow = $("<tbody>" + "<tr>" + "<td>" + trainName + "</td>" + "<td>" + destination + "</td>" + "<td>" + firstTrain + "</td>" + monthsWorked + "</td>" + "<td>" + frequency + "</td>" +
-            "<td>" + totBilled + "</td>" + "</tr>" + "</tbody>");
-        /*$("#emp").append(dynamicEmpRow);
-        $("#roleId").append(dynamicRoleRow);
-        $("#dateId").append(dynamicDateRow);
-        $("#rateId").append(dynamicRateRow);*/
-        $("#tableHead").append(dynamicRow);
-        // $('#tableHead > tbody:last-child').append("<tr>" + name + "</tr>" + "<tr>" + role + "</tr>" + "<tr>" + startDate + "</tr>" + "<tr>" + monthlyRate + "</tr>");
-
-    });
+    
 
     database.ref().on("child_added", function(childSnapshot) {
         console.log(childSnapshot.val().trainName);
