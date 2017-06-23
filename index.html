@@ -9,6 +9,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Audiowide|Bungee" rel="stylesheet">
     <script src="https://www.gstatic.com/firebasejs/4.1.2/firebase.js"></script>
+    <!-- Moment.js Reference -->
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
     <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
     <!-- Favicon -->
     <link href="data:image/x-icon;base64,AAABAAEAEBAAAAAAAABoBQAAFgAAACgAAAAQAAAAIAAAAAEACAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAAAAAAAWlrwAPn5+QCSkuUAubn6AAIC/AAPD98AIiKxAOLi4ADBwfQAIiLKAPj49ADe3tsAAAD6AHBwgABlZLMAcnJyABER8wB5eXcAnZ2dACcnJwDm5uYAOTjnAAAA6gDu7ugA7O3rAPj49QBsbGsAe3v/AOnp5gD///oAAAD7ANTU4ADq6vQAFBR3AKal+wDy8vYAfX19AMbGxgAcHN0AcXHzAAAAsQCUlOoAJCUuAGxsbABoaGcA///7AHNzcQAAAPwAaGiAAP7+/gAAAMIAvr7/AODg4ACenpwAiYr/ACYlxAC1tfgAvr69AG1tagDm5uAAERHlAFBRqgBOTXMAzMz5AOfn5gBmZmYAiIiBAL6+vgArKycAgIDKAAAAYAD4+PgAnJybADk5vgBycpcAU1TMAPDw7gDFxe0AQkLOAGZmbwAUFP8Aenr9AK6uogAoKCgAZmZnAHFxcQDBwccAv7/uAB4eLAAJCuIAJybtANDQzgCcnJwAmpvyAAAA5gAvL+QA///+AAAA/wBwcGwAUlKIAKen2ABqam0ASEntAAYHqQCcnJ0A////AGZltgCfoJoAIiP3AAQE/QCamrwAn6D+AA4OtwBMTN0Ac3OGAHJywwBycnAA4eHZAKKinQD9/f0AAgL7ADExOgDq6ukAnZ2bADk5qAAODvoA19fVAAYGvgD7+/sA3t7aAA0M5wAODjMA1dX0ADg3jQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAampqampqampqal4NeQlqamFqampqampqampABR85amoqPBUVFRUVFRUVIBEwA0ECF4QAAAAAAAAAAAApYkcAJmKAZhBWVlZWVlZ1SjB9LzUoYjdqampqampqaiMNUmpqGWduWBpISEhISEhOMAELeGNZMwZ6VBQUFBQUK19xRVwVd29+B2wTExMTEzZgJ3x7ampqBFE0ampqampqHG1qampqMlMiPXMtQkJCVYZaUAxqamp/Q3JoEiUlJSVLgw4IampqamokFnAugYGBIVuFMmpqampqGDEKPzssLBs4ZIJqampqamoeZU9XREQ6TEZNampqampqanZ0PkldaWsPHQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" rel="icon" type="image/x-icon" />
@@ -37,43 +39,21 @@
                     <button class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-filter"></span> Filter</button>
                 </div> -->
                 </div>
-                <table class="table">
+                <table class="table" id="js-TrainTable">
                     <thead>
                         <tr class="filters">
-                            <th id="emp">Train Name</th>
-                            <th id="roleId">Destination</th>
-                            <th id="dateId">Frequency (min)</th>
+                            <th>Train Name</th>
+                            <th>Destination</th>
+                            <th>Frequency (min)</th>
                             <th>Next Arrival</th>
-                            <th id="rateId">Minutes Away</th>
+                            <th>Minutes Away</th>
                         </tr>
                     </thead>
                     <tbody>
                     </tbody>
                 </table>
             </div>
-            <!-- End Area -->
-            <table id="tableHead" class="table">
-                <thead>
-                    <tr>
-                        <th id="emp">EmployeeName</th>
-                        <th id="roleId">Role</th>
-                        <th id="dateId">Start Date</th>
-                        <th>Months Worked</th>
-                        <th id="rateId">Monthly Rate($)</th>
-                        <th>Total Billed($)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- <tr>
-                        <td>Sanish</td>
-                        <td>QA</td>
-                        <td>01-02-1999</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                    </tr> -->
-                </tbody>
-            </table>
+            
         </div>
         <!-- form area -->
         <div class="jumbotron" class="text-left">
@@ -98,7 +78,7 @@
                         <label for="Rate">Frequency</label>
                         <input type="Rate" class="form-control" id="js-Frequency" placeholder="Enter Monthly Rate">
                     </div>
-                    <button id="addEmp" type="submit" class="btn btn-default">Start</button>
+                    <button id="js-AddTrain" type="submit" class="btn btn-default">Start</button>
                 </form>
             </div>
         </div>
