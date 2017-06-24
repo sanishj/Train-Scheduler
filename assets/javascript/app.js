@@ -49,7 +49,7 @@ $(document).ready(function() {
         var firstTrain = childSnapshot.val().firstTrain;
         var frequency = childSnapshot.val().frequency;
 
-        
+
         // First Time (pushed back 1 year to make sure it comes before current time)
         var firstTrainTimeConverted = moment(firstTrain, "HH:mm").subtract(1, "years");
         console.log("firstTrain: " + firstTrainTimeConverted);
