@@ -39,9 +39,9 @@
                     <button class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-filter"></span> Filter</button>
                 </div> -->
                 </div>
-                <table class="table" id="js-TrainTable">
+                <table class="table text-center" id="js-TrainTable">
                     <thead>
-                        <tr class="filters">
+                        <tr class="text-center">
                             <th>Train Name</th>
                             <th>Destination</th>
                             <th>Frequency (min)</th>
@@ -62,23 +62,23 @@
                     <h3 class="panel-title">Add Train</h3>
                 </div>
                 <form class="text-left">
-                    <div class="form-group text-left">
+                    <div class="form-group text-left required">
                         <label for="Employee Name">Train Name</label>
                         <input type="Employee Name" class="form-control" id="js-TrainName" placeholder="Enter Train Name">
                     </div>
-                    <div class="form-group text-left">
+                    <div class="form-group text-left required">
                         <label for="Role">Destination</label>
                         <input type="Role" class="form-control" id="js-Dest" placeholder="Enter Destination">
                     </div>
-                    <div class="form-group text-left">
-                        <label for="Date">First Train Time</label>
-                        <input type="Date" class="form-control" id="js-FirstTrain" placeholder="Enter Start Date">
+                    <div class="form-group text-left required">
+                        <label for="time">First Train Time (HH:mm - Military Time)</label>
+                        <input type="time" class="form-control" id="js-FirstTrain" placeholder="Enter First Train Time">
                     </div>
-                    <div class="form-group text-left">
-                        <label for="Rate">Frequency</label>
-                        <input type="Rate" class="form-control" id="js-Frequency" placeholder="Enter Monthly Rate">
+                    <div class="form-group text-left required">
+                        <label for="number">Frequency</label>
+                        <input type="Rate" class="form-control" id="js-Frequency" placeholder="Enter Frequency">
                     </div>
-                    <button id="js-AddTrain" type="submit" class="btn btn-default">Start</button>
+                    <button id="js-AddTrain" type="submit" class="btn btn-default">Submit</button>
                 </form>
             </div>
         </div>
