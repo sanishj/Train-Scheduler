@@ -53,9 +53,11 @@ $(document).ready(function() {
         console.log(sysDateTime);
         console.log(firstTrain);
 
+        // var nextTrai = moment().add(firstTrain, 'hours').format('LLL')
+
         var cdt = moment(firstTrain, 'HH:mm');
         console.log(cdt.toDate());
-        console.log(cdt.toDate());
+        // console.log(nextTrai.toDate());
 
         var dateTime = moment(sysDateTime + ' ' + firstTrain, 'MM/DD/YYYY HH:mm');
         console.log(dateTime.format('MM/DD/YYYY HH:mm'))
