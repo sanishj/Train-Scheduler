@@ -68,7 +68,7 @@ $(document).ready(function() {
         var minsAway = '';
 
         // Add each train's data into the table
-        $("#js-TrainTable > tbody").append("<tr><td>" + trainName + "</td><td>" + destination + "</td><td>" +
+        $("#js-TrainTable > tbody").append("<tr class='text-left'><td>" + trainName + "</td><td>" + destination + "</td><td>" +
             frequency + "</td><td>" + nextArrival + "</td><td>" + minsAway + "</td></tr>");
     });
 
