@@ -49,22 +49,27 @@ $(document).ready(function() {
         var firstTrain = childSnapshot.val().firstTrain;
         var frequency = childSnapshot.val().frequency;
 
-        var sysDateTime = moment().format('MM/DD/YYYY HH:mm');
-        console.log("sysdate = " + sysDateTime);
-        console.log("firstTrain: " + firstTrain);
-
         
-        var cdt = moment(firstTrain, 'HH:mm');
-        console.log("cdt: " + cdt.toDate());
+        // First Time (pushed back 1 year to make sure it comes before current time)
+        var firstTrainTimeConverted = moment(firstTrain, "HH:mm").subtract(1, "years");
+        console.log("firstTrain: " + firstTrainTimeConverted);
+        // Current Time
+        var currentTime = moment();
+        console.log("CURRENT TIME: " + moment(currentTime).format("HH:mm"));
+        console.log(currentTime);
+        // Difference between the times
+        var diffTime = moment().diff(moment(firstTrainTimeConverted), "minutes");
+        console.log("DIFFERENCE IN TIME: " + diffTime);
+        // Time apart (remainder)
+        var tRemainder = diffTime % frequency;
+        console.log(tRemainder);
+        // Minute Until Train
+        minutesAway = frequency - tRemainder;
+        console.log("MINUTES TILL TRAIN: " + minutesAway);
 
-        var dateTime = moment(sysDateTime + firstTrain, 'MM/DD/YYYY HH:mm');
-        console.log("dateTime: " + dateTime.format('MM/DD/YYYY HH:mm'))
+        var nextArrival = tRemainder;
 
-
-
-        var nextArrival = '';
-
-        var minsAway = '';
+        var minsAway = minutesAway;
 
         // Add each train's data into the table
         $("#js-TrainTable > tbody").append("<tr class='text-left'><td>" + trainName + "</td><td>" + destination + "</td><td>" +
