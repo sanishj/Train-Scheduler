@@ -50,23 +50,20 @@ $(document).ready(function() {
         var frequency = childSnapshot.val().frequency;
 
         var sysDateTime = moment().format('MM/DD/YYYY HH:mm');
-        console.log(sysDateTime);
-        console.log(firstTrain);
+        console.log("sysdate = " + sysDateTime);
+        console.log("firstTrain: " + firstTrain);
 
-        // var nextTrai = moment().add(firstTrain, 'hours').format('LLL')
-
+        
         var cdt = moment(firstTrain, 'HH:mm');
-        console.log(cdt.toDate());
-        // console.log(nextTrai.toDate());
+        console.log("cdt: " + cdt.toDate());
 
-        var dateTime = moment(sysDateTime + ' ' + firstTrain, 'MM/DD/YYYY HH:mm');
-        console.log(dateTime.format('MM/DD/YYYY HH:mm'))
+        var dateTime = moment(sysDateTime + firstTrain, 'MM/DD/YYYY HH:mm');
+        console.log("dateTime: " + dateTime.format('MM/DD/YYYY HH:mm'))
 
-        // Prettify the employee start
+
+
         var nextArrival = '';
 
-        // Calculate the months worked using hardcore math
-        // To calculate the months worked
         var minsAway = '';
 
         // Add each train's data into the table
